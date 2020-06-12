@@ -17,3 +17,4 @@ while True:
     result_list.append(b)
     result_list.append(a)
     print(result_list)
+# в условии не указана последовательность заполнения элементов списка
