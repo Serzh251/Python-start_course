@@ -39,7 +39,6 @@ while True:
         print("структура базы данных товаров готова, составлена аналитика товаров:")
         break
 # составление аналитики
-i = 0
 while i < len(data_list):
     name_list.append(data_list[i][1].get('название'))
     price_list.append(data_list[i][1].get('цена'))
