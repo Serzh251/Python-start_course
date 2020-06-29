@@ -32,6 +32,7 @@ class Car:
 
 class TowCar(Car):
     def __init__(self, speed: int, color, name, is_police: bool):
+        super().__init__(speed, color, name, is_police)
         Car.speed = speed
         Car.color = color
         Car.name = name
@@ -42,6 +43,7 @@ class TowCar(Car):
 
 class SportCar(Car):
     def __init__(self, speed: int, color, name, is_police: bool):
+        super().__init__(speed, color, name, is_police)
         Car.speed = speed
         Car.color = color
         Car.name = name
@@ -58,6 +60,7 @@ class SportCar(Car):
 class WorkCar(Car):
 
     def __init__(self, speed: int, color, name, is_police: bool):
+        super().__init__(speed, color, name, is_police)
         Car.speed = speed
         Car.color = color
         Car.name = name
@@ -73,6 +76,7 @@ class WorkCar(Car):
 
 class PoliceCar(Car):
     def __init__(self, speed: int, color, name, is_police: bool):
+        super().__init__(speed, color, name, is_police)
         Car.speed = speed
         Car.color = color
         Car.name = name
@@ -90,3 +94,7 @@ t.show_speed()
 s.show_speed()
 w.show_speed()
 p.show_speed()
+
+t.go()
+s.stop()
+w.turn('на лево')
