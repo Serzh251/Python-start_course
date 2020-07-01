@@ -20,15 +20,15 @@ class Matrix:
             print()
         return ' '
 
-    def __abs__(self, other):
+    def __add__(self, other):
         result = list()
         count = 0
         for row in self.my_m:
             result.append([])
             for item in range(len(row)):
-                result[count].append(self.my_m[count][item] + self.other[count][item])
+                result[count].append(Matrix(self.my_m[count][item] + self.other[count][item]))
             count += 1
-        return f'{result}'
+        return f'результат сложения матриц {result}'
 
 # вне ООП данный метод работает, не могу понять как прикрутить это в __add__
 # my_list = [[1, 42], [3, 4], [5, 6]]
