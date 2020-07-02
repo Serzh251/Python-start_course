@@ -26,7 +26,7 @@ class Matrix:
         for row in self.my_m:
             result.append([])
             for item in range(len(row)):
-                result[count].append(Matrix(self.my_m[count][item] + self.other[count][item]))
+                result[count].append(self.my_m[count][item] + other.my_m[count][item])
             count += 1
         return f'результат сложения матриц {result}'
 

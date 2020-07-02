@@ -6,13 +6,50 @@
 # для костюма (2 * H + 0.3). Проверить работу этих методов на реальных данных.
 # Реализовать общий подсчет расхода ткани. Проверить на практике полученные на этом уроке знания:
 # реализовать абстрактные классы для основных классов проекта, проверить на практике работу декоратора @property.
-my_list = [[1, 42], [3, 4], [5, 6]]
-all = [[1, 42], [3, 4], [5, 6]]
-result = list()
-count = 0
-for row in my_list:
-    result.append([])
-    for item in range(len(row)):
-        result[count].append(my_list[count][item] + all[count][item])
-    count += 1
-print(result)
+from abc import ABC, abstractmethod
+
+
+class Clothes(ABC):
+    @abstractmethod
+    def calculate_tissue(self):
+        pass
+
+
+class Coat(Clothes):
+    # property = ''
+    def __init__(self, v):
+        self.v = v
+        # self.size = size
+
+    def calculate_tissue(self):
+        return round(self.v/6.5 + 0.5, 2)
+
+    # @property
+    # def size(self):
+    #     return self.property
+    #
+    # @size.setter
+    # def size(self, size):
+    #     if size < 42:
+    #         self.property = 'young'
+    #     else:
+    #         self.property = 'adult'
+    #
+    # def property_coat(self):
+    #     return f'{self.property}'
+
+
+class Suit (Clothes):
+    def __init__(self, h):
+        self.h = h
+
+    def calculate_tissue(self):
+        return round(self.h * 2 + 0.3, 2)
+
+
+s = Suit(2)
+c = Coat(1.5)
+print(f'расход ткани для пальто- {s.calculate_tissue()} м.')
+print(f'расход ткани для костюма- {c.calculate_tissue()} м.')
+print(f'общий расход ткани- {round(s.calculate_tissue() + c.calculate_tissue(), 2)} м.')
+# print(c.property)
