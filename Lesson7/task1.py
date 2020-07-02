@@ -30,18 +30,6 @@ class Matrix:
             count += 1
         return f'результат сложения матриц {result}'
 
-# вне ООП данный метод работает, не могу понять как прикрутить это в __add__
-# my_list = [[1, 42], [3, 4], [5, 6]]
-# all = [[1, 42], [3, 4], [5, 6]]
-# result = list()
-# count = 0
-# for row in my_list:
-#     result.append([])
-#     for item in range(len(row)):
-#         result[count].append(my_list[count][item] + all[count][item])
-#     count += 1
-# print(result)
-
 
 matrix1 = Matrix([[1, 45], [3, 4], [5, 45]])
 matrix2 = Matrix([[1, 2], [3, 4], [5, 88]])
